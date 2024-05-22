@@ -1,0 +1,13 @@
+{
+  "name": "com.theone.module.common",
+  "displayName": "The One Module Common",
+  "description": "This package common features for otgher modules.",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "author": {
+    "name": "The One Game Studio",
+    "email": "tuha@the1studio.org",
+    "url": "https://theonegamestudio.com/"
+  },
+  "license": "MIT"
+}
