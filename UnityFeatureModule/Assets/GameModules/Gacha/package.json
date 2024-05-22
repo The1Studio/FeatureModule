@@ -1,8 +1,8 @@
 {
   "name": "com.theone.module.gacha",
-  "displayName": "Gacha Feature",
-  "description": "This package include .",
-  "version": "1.0.00",
+  "displayName": "The One Gacha",
+  "description": "This package include gacha service and example gacha data.",
+  "version": "1.0.0",
   "unity": "2022.3",
   "author": {
     "name": "The One Game Studio",
