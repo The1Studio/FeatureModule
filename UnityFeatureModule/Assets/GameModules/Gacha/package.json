@@ -1,0 +1,16 @@
+{
+  "name": "com.theone.module.gacha",
+  "displayName": "Gacha Feature",
+  "description": "This package include .",
+  "version": "1.0.00",
+  "unity": "2022.3",
+  "author": {
+    "name": "The One Game Studio",
+    "email": "tuha@the1studio.org",
+    "url": "https://theonegamestudio.com/"
+  },
+  "dependencies": {
+    "com.theone.module.common": "1.0.0"
+  },
+  "license": "MIT"
+}

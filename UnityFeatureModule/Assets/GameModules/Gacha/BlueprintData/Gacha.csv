@@ -1,0 +1,3 @@
+Id,Title,Price1Time,Price10Times,GachaPackId,GachaImageAddressable,IconAddressable
+booster_shard_pack_1,Booster,Coin:300,Coin:2700,booster_shard_pack:1,img_gacha_booster,gacha_booster_icon
+character_pack,Character,AdsTicket:1,AdsTicket:9,character_shard_pack:1,img_gacha_character,gacha_character_icon
