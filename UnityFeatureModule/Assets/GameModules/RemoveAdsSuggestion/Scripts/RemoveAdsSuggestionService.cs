@@ -1,4 +1,4 @@
-namespace TheOneStudio.HyperCasual.RemoveAdsSuggestion.Scripts
+namespace TheOneStudio.HyperCasual.GameModules.RemoveAdsSuggestion.Scripts
 {
     using System.Collections.Generic;
     using GameFoundation.Scripts.UIModule.ScreenFlow.BaseScreen.View;

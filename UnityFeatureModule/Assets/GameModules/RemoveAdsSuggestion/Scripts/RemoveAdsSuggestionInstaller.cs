@@ -1,9 +1,10 @@
-namespace TheOneStudio.HyperCasual.RemoveAdsSuggestion.Scripts
+namespace TheOneStudio.HyperCasual.GameModules.RemoveAdsSuggestion.Scripts
 {
     using System;
     using System.Linq;
     using Zenject;
 
+    // Need to install this before using RemoveAdsSuggestionService
     public class RemoveAdsSuggestionInstaller : Installer<RemoveAdsSuggestionInstaller>
     {
         public override void InstallBindings()
