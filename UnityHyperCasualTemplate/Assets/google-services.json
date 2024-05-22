@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "381055380780",
+    "project_id": "hypercasual-template-4ba3d",
+    "storage_bucket": "hypercasual-template-4ba3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:381055380780:android:f2d10d3e3ff3710b065089",
+        "android_client_info": {
+          "package_name": "com.TheOneStudio.HyperCasualTemplate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "381055380780-te6cr7ol00pthpa64vjhfg4cu100h0pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQiWVpc1RLXX1_oVrDQ-UzdAu4yQWNc5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "381055380780-te6cr7ol00pthpa64vjhfg4cu100h0pu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

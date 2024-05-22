@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19820ffe993e4492a4403ec135fee582, type: 3}
+  m_Name: RemoteConfigSetting
+  m_EditorClassIdentifier: 
+  mRemoteKeyMapping:
+    keys:
+    - enable_banner_ad
+    - enable_interstitial_ad
+    - enable_mrec_ad
+    - enable_aoa_ad
+    - enable_rewarded_ad
+    - enable_rewarded_interstitial_ad
+    - enable_native_ad
+    - interval_load_ads
+    - interstitial_ad_interval
+    - min_pause_second_to_show_aoa_ad
+    - enable_ump
+    - aoa_start_session
+    - interstitial_ad_start_level
+    - delay_first_inters_ad_interval
+    values:
+    - enable_banner_ad
+    - enable_interstitial_ad
+    - enable_mrec_ad
+    - enable_aoa_ad
+    - enable_rewarded_ad
+    - enable_rewarded_interstitial_ad
+    - enable_native_ad
+    - interval_load_ads
+    - interstitial_ad_interval
+    - min_pause_second_to_show_aoa_ad
+    - enable_ump
+    - aoa_start_session
+    - interstitial_ad_start_level
+    - delay_first_inters_ad_interval

@@ -1,0 +1,8 @@
+Id,HourRangeShow,TimeToShow,Title,Body,RandomAble
+common_1,"5,24","02,00,00",Random,Random,TRUE
+common_2,"5,24","06,00,00",Random,Random,TRUE
+common_3,"5,24","30,00,00",Random,Random,TRUE
+common_4,"5,24","54,00,00",Random,Random,TRUE
+common_5,"5,24","78,00,00",Random,Random,TRUE
+common_6,"5,24","174,00,00",Random,Random,TRUE
+daily_reward,"5,24","02,00,00",daily_reward,daily_reward,FALSE

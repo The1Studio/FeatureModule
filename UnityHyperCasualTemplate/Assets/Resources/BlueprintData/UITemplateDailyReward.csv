@@ -1,0 +1,9 @@
+Day,PackImage,RewardId,RewardValue,RewardImage,Position,Size,SpoilReward,ShowValue
+1,,Coin,200,icon_coin,,,TRUE,TRUE
+2,,ShakeMove,1,thumbnail_shake_move,,,TRUE,TRUE
+3,,RainbowMove,1,thumbnail_rainbow_move,,,TRUE,TRUE
+4,,Coin,500,icon_coin,,,TRUE,TRUE
+5,,KnifeMove,1,thumbnail_shake_move,,,TRUE,TRUE
+6,,AdsTicket,3,icon_ads_ticket,,,TRUE,TRUE
+7,,Coin,500,icon_coin,,,TRUE,TRUE
+,,shard_random,10,icon_shard_random,,,TRUE,TRUE

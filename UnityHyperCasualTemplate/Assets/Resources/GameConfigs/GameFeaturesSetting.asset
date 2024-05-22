@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d461a10b8d0434caa1efdbc284dfa73, type: 3}
+  m_Name: GameFeaturesSetting
+  m_EditorClassIdentifier: 
+  enableRacingEvent: 0
+  racingConfig:
+    RacingCurrency: 
+    RacingScoreMax: 1000
+    RacingMaxProgressionPercent: 0.8
+    RacingDay: 7
+    RewardValue:
+      keys: []
+      values: 
+    IconAddressableSet: []
+  enableDailyReward: 0
+  dailyRewardConfig:
+    isCustomScreenTrigger: 0
+    screenTriggerIds: []
+    preReceiveDailyRewardStrategy: 0
+    showOnFirstOpen: 0
+    preReceiveConfig:
+      keys: 
+      values: 
+    dailyRewardAdPlacementId: DailyReward
+    notificationId: daily_reward
+  enableBadgeNotify: 0
+  enableQuestSystem: 0
+  questSystemConfig:
+    showNotificationAfterSession: 0
+    enableQuestClaimSound: 0
+    questClaimSoundKey: 
+    enableQuestNotificationSoundKey: 0
+    questNotificationSoundKey: 
+  enableInitHomeScreenManually: 0

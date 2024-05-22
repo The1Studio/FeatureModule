@@ -1,0 +1,10 @@
+Id,Platforms,ProductType,ImageAddress,Name,Description,DefaultPrice,RewardId,RewardValue,Repeat,RewardIcon,RewardContent,AddressableFlyingItem
+com.car.bridge.impossible.to.remove_ads,Android,NonConsumable,,,,$0.99,remove_ads,1,-1,btnNoads,,
+com.car.climb.draw.bridge.remove_ads,IOS,NonConsumable,,,,$0.99,remove_ads,1,-1,btnNoads,,
+com.car.climb.draw.bridge.ios.start_pack_1,"Android,IOS",NonConsumable,Icon_MenuIcon04_Reward,,,$2.99,remove_ads,1,-1,btnNoads,Remove Ads,
+,,,,,,,ChestRoomKey,3,1,,3 key/Day,
+,,,,,,,Coin,100,1,Coin,100 coins/Day,
+,,,,,,,Item,1,1,Icon_MenuIcon04_Reward,Random Car,
+com.car.climb.draw.bridge.ios.start_pack_2,"Android,IOS",NonConsumable,Icon_MenuIcon04_Reward,,,$1.99,ChestRoomKey,3,1,keyWhiteStroke 3,3 key/Day,
+,,,,,,,Coin,100,1,,100 coins/Day,
+,,,,,,,Item,1,1,,,

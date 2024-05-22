@@ -1,0 +1,2 @@
+Id,EnableTrigger,NextStepId,PreviousSteps,ScreenLocation,RequireTriggerComplete,RequireCondition,HighLightPath,ButtonCanClick,Radius,HandAnchor,HandRotation,HandSizeDelta
+first_battle,TRUE,,,HomeScreenPresenter,,"[{""RequireId"":""passed_level"",""ConditionDetail"":""{\""Level\"":1}""}]",ButtonPlay,TRUE,-180,BottomRight,0|0|-45,200|200

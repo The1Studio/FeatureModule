@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd8307767c4464db95f099c88d81071, type: 3}
+  m_Name: AnalyticConfig
+  m_EditorClassIdentifier: 
+  isAdjustEnabled: 0
+  isAppsflyerEnabled: 0
+  isByteBrewEnabled: 1
+  androidEnabled: 0
+  byteBrewAppIdAndroid: 
+  byteBrewSDKKeyAndroid: 
+  iosEnabled: 0
+  byteBrewAppIdIos: 
+  byteBrewSDKKeyIos: 

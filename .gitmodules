@@ -1,0 +1,9 @@
+[submodule "UnityHyperCasualTemplate/Packages/com.gdk.core"]
+	path = UnityHyperCasualTemplate/Packages/com.gdk.core
+	url = git@github.com:GameDevelopmentKit/GameFoundation.git
+[submodule "UnityHyperCasualTemplate/Assets/UITemplate"]
+	path = UnityHyperCasualTemplate/Assets/UITemplate
+	url = git@github.com:The1Studio/UITemplate.git
+[submodule "UnityHyperCasualTemplate/Packages/com.gdk.3rd"]
+	path = UnityHyperCasualTemplate/Packages/com.gdk.3rd
+	url = git@github.com:GameDevelopmentKit/ThirdPartyServices.git
