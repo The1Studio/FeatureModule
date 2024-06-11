@@ -1,6 +1,7 @@
 namespace TheOneStudio.HyperCasual.GameModules.RemoveAdsSuggestion.Scripts
 {
     using System.Collections.Generic;
+    using Core.AdsServices.Signals;
     using GameFoundation.Scripts.UIModule.ScreenFlow.BaseScreen.View;
     using GameFoundation.Scripts.UIModule.ScreenFlow.Managers;
     using GameFoundation.Scripts.UIModule.Utilities.GameQueueAction;
@@ -36,11 +37,17 @@ namespace TheOneStudio.HyperCasual.GameModules.RemoveAdsSuggestion.Scripts
 
         protected Dictionary<string, RemoveAdsParamConfig> RemoveAdsActionToConfig = new();
         private   float                                    totalPlayingTime;
-
+        private int                                     totalInterAdsWatchedPerSession;
         public void Initialize()
         {
+            this.signalBus.Subscribe<InterstitialAdCalledSignal>(this.OnInterAdsCallHandler);
             this.signalBus.Subscribe<RemoteConfigFetchedSucceededSignal>(this.OnRemoteConfigFetchedSucceededSignal);
             this.InitRemoveAdsSuggestAction();
+        }
+
+        private void OnInterAdsCallHandler()
+        {
+            this.totalInterAdsWatchedPerSession += 1;
         }
 
         // initialize when remote config doesn't fetch yet
@@ -87,18 +94,17 @@ namespace TheOneStudio.HyperCasual.GameModules.RemoveAdsSuggestion.Scripts
                 return false;
             }
 
-            if (this.uiTemplateAdsController.WatchInterstitialAds == 0)
+            if (this.totalInterAdsWatchedPerSession == 0)
             {
                 Debug.Log($"oneLog: RemoveAdsService.IsSuggestRemoveAdsEligible: False, No interstitial ads watched yet.");
                 return false;
             }
 
-            var isAdWatchedAtRightTime = this.uiTemplateAdsController.WatchInterstitialAds == config.FirstEnableAfterInterAds ||
-                                         this.uiTemplateAdsController.WatchInterstitialAds % config.InterAdsInterval == 0;
+            var isAdWatchedAtRightTime = this.totalInterAdsWatchedPerSession == config.FirstEnableAfterInterAds || this.totalInterAdsWatchedPerSession % config.InterAdsInterval == 0;
             if (!isAdWatchedAtRightTime)
             {
                 Debug.Log($"oneLog: RemoveAdsService.IsSuggestRemoveAdsEligible: False, Not suggesting remove ads." +
-                          $"Interstitial ads watched: {this.uiTemplateAdsController.WatchInterstitialAds}, " +
+                          $"Interstitial ads watched in session: {this.totalInterAdsWatchedPerSession}, " +
                           $"FirstEnableAfterInterAds: {config.FirstEnableAfterInterAds}, " +
                           $"InterAdsInterval: {config.InterAdsInterval}");
                 return false;
