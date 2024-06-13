@@ -69,7 +69,10 @@ namespace TheOneStudio.HighScore
 
             await (
                 this.GetPlayerAsync(loginResult.PlayFabId).ContinueWith<Player>(player => this.CurrentPlayer = player),
-                this.FetchAllUsedValuesAsync(0, 100)
+                this.config.UsedValues.ForEachAsync((key, type) => UniTask.WhenAll(
+                    this.GetCurrentPlayerEntryAsyncInternal(key, type),
+                    this.GetLeaderboardAsyncInternal(key, type, 0, 100)
+                ))
             );
 
             this.IsInitialized = true;
@@ -128,38 +131,19 @@ namespace TheOneStudio.HighScore
             );
         }
 
-        public async UniTask<PlayerLeaderboardEntry> GetCurrentPlayerEntryAsync(string key, HighScoreType type)
+        public UniTask<PlayerLeaderboardEntry> GetCurrentPlayerEntryAsync(string key, HighScoreType type)
         {
             Throw.IfNotInitialized(this);
-            var result = await InvokeAsync<GetLeaderboardAroundPlayerRequest, GetLeaderboardAroundPlayerResult>(
-                PlayFabClientAPI.GetLeaderboardAroundPlayer,
-                new()
-                {
-                    StatisticName      = GetKey(key, type),
-                    MaxResultsCount    = 1,
-                    ProfileConstraints = this.config.ProfileConstraints,
-                }
-            );
-            return this.cachedCurrentPlayerEntry[(key, type)] = Convert(result.Leaderboard.Single(entry => entry.PlayFabId == this.CurrentPlayer.Id));
+            return this.GetCurrentPlayerEntryAsyncInternal(key, type);
         }
 
-        public async UniTask<IEnumerable<PlayerLeaderboardEntry>> GetLeaderboardAsync(string key, HighScoreType type, int startPosition, int count)
+        public UniTask<IEnumerable<PlayerLeaderboardEntry>> GetLeaderboardAsync(string key, HighScoreType type, int startPosition, int count)
         {
             Throw.IfNotInitialized(this);
             Throw.IfLessThanZero(startPosition, nameof(startPosition));
             Throw.IfLessThanZero(count, nameof(count));
             Throw.IfGreaterThanOneHundred(count, nameof(count));
-            var result = await InvokeAsync<GetLeaderboardRequest, GetLeaderboardResult>(
-                PlayFabClientAPI.GetLeaderboard,
-                new()
-                {
-                    StatisticName      = GetKey(key, type),
-                    StartPosition      = startPosition,
-                    MaxResultsCount    = count,
-                    ProfileConstraints = this.config.ProfileConstraints,
-                }
-            );
-            return this.cachedLeaderboard[(key, type, startPosition, count)] = result.Leaderboard.Select(Convert).ToArray();
+            return this.GetLeaderboardAsyncInternal(key, type, startPosition, count);
         }
 
         public UniTask FetchUsedCurrentPlayerEntriesAsync()
@@ -191,6 +175,35 @@ namespace TheOneStudio.HighScore
         }
 
         #region Private
+
+        private async UniTask<PlayerLeaderboardEntry> GetCurrentPlayerEntryAsyncInternal(string key, HighScoreType type)
+        {
+            var result = await InvokeAsync<GetLeaderboardAroundPlayerRequest, GetLeaderboardAroundPlayerResult>(
+                PlayFabClientAPI.GetLeaderboardAroundPlayer,
+                new()
+                {
+                    StatisticName      = GetKey(key, type),
+                    MaxResultsCount    = 1,
+                    ProfileConstraints = this.config.ProfileConstraints,
+                }
+            );
+            return this.cachedCurrentPlayerEntry[(key, type)] = Convert(result.Leaderboard.Single(entry => entry.PlayFabId == this.CurrentPlayer.Id));
+        }
+
+        public async UniTask<IEnumerable<PlayerLeaderboardEntry>> GetLeaderboardAsyncInternal(string key, HighScoreType type, int startPosition, int count)
+        {
+            var result = await InvokeAsync<GetLeaderboardRequest, GetLeaderboardResult>(
+                PlayFabClientAPI.GetLeaderboard,
+                new()
+                {
+                    StatisticName      = GetKey(key, type),
+                    StartPosition      = startPosition,
+                    MaxResultsCount    = count,
+                    ProfileConstraints = this.config.ProfileConstraints,
+                }
+            );
+            return this.cachedLeaderboard[(key, type, startPosition, count)] = result.Leaderboard.Select(Convert).ToArray();
+        }
 
         private static UniTask<TResult> InvokeAsync<TRequest, TResult>(PlayFabAction<TRequest, TResult> action, TRequest request)
         {
