@@ -1,4 +1,5 @@
-﻿namespace TheOneStudio.HighScore
+﻿#nullable enable
+namespace TheOneStudio.HighScore
 {
     using UnityEngine.Scripting;
 
