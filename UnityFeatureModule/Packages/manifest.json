@@ -1,4 +1,19 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.google",
+        "com.cysharp",
+        "com.frostbun",
+        "com.coffee",
+        "com.github-glitchenzo",
+        "org.nuget",
+        "com.theone"
+      ]
+    }
+  ],
   "dependencies": {
     "com.google.android.appbundle": "1.8.0",
     "com.google.external-dependency-manager": "1.2.179",
@@ -52,19 +67,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "scopedRegistries": [
-    {
-      "name": "OpenUPM",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.google",
-        "com.cysharp",
-        "com.coffee",
-        "com.github-glitchenzo",
-        "org.nuget",
-        "com.theone"
-      ]
-    }
-  ]
+  }
 }

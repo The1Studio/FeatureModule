@@ -15,7 +15,7 @@
       "url": "https://package.openupm.com"
     },
     "com.cysharp.r3": {
-      "version": "1.1.11",
+      "version": "1.1.12",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -25,6 +25,13 @@
     },
     "com.cysharp.unitask": {
       "version": "2.5.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
+    "com.frostbun.unit.extensions": {
+      "version": "1.0.9",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -41,14 +48,14 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.unity.addressables": "1.21.20",
+        "com.unity.addressables": "1.21.21",
         "com.unity.nuget.newtonsoft-json": "3.2.1",
         "com.svermeulen.extenject": "10.0.0",
-        "com.cysharp.r3": "1.1.11",
+        "com.cysharp.r3": "1.1.12",
         "com.cysharp.unitask": "2.5.4",
         "com.cysharp.messagepipe": "1.8.1",
         "com.cysharp.messagepipe.zenject": "1.8.1",
-        "org.nuget.r3": "1.1.11",
+        "org.nuget.r3": "1.1.12",
         "org.nuget.sylvan.data.csv": "1.3.8"
       }
     },
@@ -148,6 +155,14 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.com"
+    },
+    "com.theone.module.highscore": {
+      "version": "file:HighScore",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.frostbun.unit.extensions": "1.0.9"
+      }
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -278,7 +293,7 @@
       "url": "https://package.openupm.com"
     },
     "org.nuget.r3": {
-      "version": "1.1.11",
+      "version": "1.1.12",
       "depth": 1,
       "source": "registry",
       "dependencies": {

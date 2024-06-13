@@ -1,0 +1,12 @@
+{
+  "name": "TheOneStudio.HighScore",
+  "rootNamespace": "TheOneStudio.HighScore",
+  "references": [
+    "UniTask",
+    "UniT.Extensions",
+    "GameFoundation.Models",
+    "GameFoundation.Utilities",
+    "Zenject",
+    "PlayFab"
+  ]
+}
