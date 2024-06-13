@@ -1,0 +1,16 @@
+{
+  "name": "com.theone.module.highscore",
+  "displayName": "HighScore",
+  "description": "Local highscore manager & Remote leaderboard manager",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "license": "MIT",
+  "author": {
+    "name": "The One Game Studio",
+    "email": "tuha@the1studio.org",
+    "url": "https://theonegamestudio.com/"
+  },
+  "dependencies": {
+    "com.frostbun.unit.extensions": "1.0.9"
+  }
+}

@@ -32,6 +32,7 @@ MonoBehaviour:
     m_Scopes:
     - com.google
     - com.cysharp
+    - com.frostbun
     - com.coffee
     - com.github-glitchenzo
     - org.nuget
