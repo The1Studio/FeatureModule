@@ -32,7 +32,17 @@ namespace TheOneStudio.HighScore
 
         #endregion
 
-        public event Action? OnInitialized;
+        private Action? onInitialized;
+
+        public event Action OnInitialized
+        {
+            add
+            {
+                this.onInitialized += value;
+                if (this.IsInitialized) value();
+            }
+            remove => this.onInitialized -= value;
+        }
 
         public ILeaderboardConfig Config        => this.config;
         public bool               IsInitialized { get; private set; }
@@ -57,10 +67,13 @@ namespace TheOneStudio.HighScore
             );
             #endif
 
-            this.CurrentPlayer = await this.GetPlayerAsync(loginResult.PlayFabId);
+            await (
+                this.GetPlayerAsync(loginResult.PlayFabId).ContinueWith<Player>(player => this.CurrentPlayer = player),
+                this.FetchAllUsedValuesAsync(0, 100)
+            );
 
             this.IsInitialized = true;
-            this.OnInitialized?.Invoke();
+            this.onInitialized?.Invoke();
         });
 
         public async UniTask<Player> GetPlayerAsync(string id)

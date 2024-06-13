@@ -8,7 +8,7 @@ namespace TheOneStudio.HighScore
 
     public interface ILeaderboardManager
     {
-        public event Action? OnInitialized;
+        public event Action OnInitialized;
 
         public ILeaderboardConfig Config { get; }
 
