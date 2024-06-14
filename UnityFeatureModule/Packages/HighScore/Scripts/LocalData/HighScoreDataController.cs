@@ -36,11 +36,10 @@ namespace TheOneStudio.HighScore
             {
                 highScores.RemoveAt(highScores.Count - 1);
             }
-            if (index == 0)
-            {
-                var oldHighScore = highScores.Skip(1).FirstOrDefault();
-                this.OnNewHighScore?.Invoke(key, type, oldHighScore, score);
-            }
+            if (index != 0) return;
+            var oldHighScore = highScores.Skip(1).FirstOrDefault();
+            if (oldHighScore == score) return;
+            this.OnNewHighScore?.Invoke(key, type, oldHighScore, score);
         }
 
         public void SubmitAll(string key, int score)
