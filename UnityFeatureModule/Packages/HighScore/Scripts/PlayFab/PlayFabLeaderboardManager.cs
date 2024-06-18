@@ -67,13 +67,12 @@ namespace TheOneStudio.HighScore
             );
             #endif
 
-            await (
-                this.GetPlayerAsync(loginResult.PlayFabId).ContinueWith<Player>(player => this.CurrentPlayer = player),
-                this.config.UsedValues.ForEachAsync((key, type) => UniTask.WhenAll(
-                    this.GetCurrentPlayerEntryAsyncInternal(key, type),
-                    this.GetLeaderboardAsyncInternal(key, type, 0, 100)
-                ))
-            );
+            this.CurrentPlayer = await this.GetPlayerAsync(loginResult.PlayFabId);
+
+            await this.config.UsedValues.ForEachAsync((key, type) => UniTask.WhenAll(
+                this.GetCurrentPlayerEntryAsyncInternal(key, type),
+                this.GetLeaderboardAsyncInternal(key, type, 0, 100)
+            ));
 
             this.IsInitialized = true;
             this.onInitialized?.Invoke();
