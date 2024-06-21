@@ -26,7 +26,7 @@ namespace TheOneStudio.HighScore
 
         public event OnNewHighScore? OnNewHighScore;
 
-        public void Submit(string key, HighScoreType type, int score)
+        public bool Submit(string key, HighScoreType type, int score)
         {
             var highScores = this.highScoreData[key, type, GetCurrentTime(type)];
             var index      = 0;
@@ -36,11 +36,11 @@ namespace TheOneStudio.HighScore
             {
                 highScores.RemoveAt(highScores.Count - 1);
             }
-            if (index == 0)
-            {
-                var oldHighScore = highScores.Skip(1).FirstOrDefault();
-                this.OnNewHighScore?.Invoke(key, type, oldHighScore, score);
-            }
+            if (index != 0) return false;
+            var oldHighScore = highScores.Skip(1).FirstOrDefault();
+            if (oldHighScore == score) return false;
+            this.OnNewHighScore?.Invoke(key, type, oldHighScore, score);
+            return true;
         }
 
         public void SubmitAll(string key, int score)
