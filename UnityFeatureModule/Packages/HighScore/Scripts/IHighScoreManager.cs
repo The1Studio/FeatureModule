@@ -11,7 +11,7 @@ namespace TheOneStudio.HighScore
     /// </summary>
     public interface IHighScoreManager
     {
-        public event OnNewHighScore? OnNewHighScore;
+        public event OnNewHighScore OnNewHighScore;
 
         /// <summary>
         ///     Submit score. If a new high score reached, invoke <see cref="OnNewHighScore"/>.
@@ -26,7 +26,10 @@ namespace TheOneStudio.HighScore
         /// <param name="score">
         ///     Possible new high score
         /// </param>
-        public void Submit(string key, HighScoreType type, int score);
+        /// <returns>
+        ///     True if a new high score reached
+        /// </returns>
+        public bool Submit(string key, HighScoreType type, int score);
 
         /// <summary>
         ///     Submit score for all types. If a new high score reached, invoke <see cref="OnNewHighScore"/>.
@@ -82,7 +85,10 @@ namespace TheOneStudio.HighScore
         /// <param name="score">
         ///     Possible new high score
         /// </param>
-        public void Submit(HighScoreType type, int score) => this.Submit(DEFAULT_KEY, type, score);
+        /// <returns>
+        ///     True if a new high score reached
+        /// </returns>
+        public bool Submit(HighScoreType type, int score) => this.Submit(DEFAULT_KEY, type, score);
 
         /// <summary>
         ///     Submit score for all types. If a new high score reached, invoke <see cref="OnNewHighScore"/>.
