@@ -1,0 +1,22 @@
+{
+    "name": "TheOneStudio.GameFeatures.Decoration",
+    "rootNamespace": "TheOneStudio.GameFeatures.Decoration",
+    "references": [
+        "GUID:3d4daf6696a825240b11d99d0d2865ed",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:2c90e14f48194f74c8ea43f9a2e06d80",
+        "GUID:fd63a94f96a04194697a9732d6239b71",
+        "GUID:f65752179be32364b817b701577f9fe6",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
