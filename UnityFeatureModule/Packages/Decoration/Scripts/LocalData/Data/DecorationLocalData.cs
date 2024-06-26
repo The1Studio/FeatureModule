@@ -10,7 +10,7 @@
     {
         public Type ControllerType => typeof(DecorationLocalDataController);
 
-        public int                               CurrencyCityId { get; set; }
+        public int                                       CurrencyCityId { get; set; }
         public Dictionary<int, DecorationGroupLocalData> IdToCityData   { get; set; } = new();
 
         public void Init() { }

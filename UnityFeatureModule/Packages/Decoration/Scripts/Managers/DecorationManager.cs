@@ -16,7 +16,7 @@
         private readonly DecorationLocalDataController    decorationLocalDataController;
         private readonly DecorationBlueprint              decorationBlueprint;
         private readonly DecorationGroupPresenter.Factory cityFactory;
-        private readonly DecorationView              decorationView;
+        private readonly DecorationView                   decorationView;
 
         public DecorationManager(DecorationLocalDataController decorationLocalDataController,
                                  DecorationBlueprint decorationBlueprint,
@@ -26,7 +26,7 @@
             this.decorationLocalDataController = decorationLocalDataController;
             this.decorationBlueprint           = decorationBlueprint;
             this.cityFactory                   = cityFactory;
-            this.decorationView           = decorationView;
+            this.decorationView                = decorationView;
         }
 
         #endregion
@@ -73,20 +73,20 @@
 
         private DecorationGroupModel GetDecorationGroupModel(int decorationGroupId, DecorationGroupDirection decorationGroupDirection = DecorationGroupDirection.Center, bool isForce = false)
         {
-            var cityRecord = this.decorationBlueprint[decorationGroupId];
-            var cityData   = this.decorationLocalDataController.GetCityData(decorationGroupId, isForce);
+            var decorationRecord = this.decorationBlueprint[decorationGroupId];
+            var decorationData   = this.decorationLocalDataController.GetCityData(decorationGroupId, isForce);
             return new DecorationGroupModel()
             {
-                Id                       = cityRecord.CityId,
-                CityName                 = cityRecord.CityName,
-                AddressableName          = cityRecord.PrefabName,
+                Id                       = decorationRecord.CityId,
+                Name                     = decorationRecord.Name,
+                AddressableName          = decorationRecord.PrefabName,
                 Parent                   = this.decorationView.cityGroup.transform,
-                Position                 = cityRecord.Position,
-                Rotation                 = cityRecord.Rotation,
-                Scale                    = cityRecord.Scale,
-                CurrentBuildingIndex     = cityData.CurrentBuildingIndex,
+                Position                 = decorationRecord.Position,
+                Rotation                 = decorationRecord.Rotation,
+                Scale                    = decorationRecord.Scale,
+                CurrentBuildingIndex     = decorationData.CurrentBuildingIndex,
                 DecorationGroupDirection = decorationGroupDirection,
-                IndexToCostPaid          = cityData.IndexToCostPaid.ToDictionary(x => x.Key, x => x.Value)
+                IndexToCostPaid          = decorationData.IndexToCostPaid.ToDictionary(x => x.Key, x => x.Value)
             };
         }
 

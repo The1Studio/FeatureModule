@@ -4,12 +4,12 @@
     using TheOneStudio.GameFeature.Decoration.Managers;
     using Zenject;
 
-    public class DecorationInstaller : Installer<DecorationView,DecorationInstaller>
+    public class DecorationInstaller : Installer<DecorationView, DecorationInstaller>
     {
         private readonly DecorationView decorationView;
 
         public DecorationInstaller(DecorationView decorationView) { this.decorationView = decorationView; }
-        
+
         public override void InstallBindings()
         {
             this.Container.Bind<DecorationManager>().AsCached();

@@ -58,10 +58,10 @@
             this.UnlockNewCity(cityId, buildingAmount);
             this.decorationLocalData.CurrencyCityId = cityId;
         }
-        
+
         public void UnlockNewCity(int cityId, int buildingAmount)
         {
-            if(this.decorationLocalData.IdToCityData.ContainsKey(cityId)) return;
+            if (this.decorationLocalData.IdToCityData.ContainsKey(cityId)) return;
             var idToCostPaid = new Dictionary<int, int>();
             for (var i = 0; i < buildingAmount; i++)
             {
@@ -74,18 +74,12 @@
                 CurrentBuildingIndex = 0,
                 IndexToCostPaid      = idToCostPaid,
             };
-            
+
             this.decorationLocalData.IdToCityData.Add(cityId, cityData);
         }
 
-        public Dictionary<int, DecorationGroupLocalData> GetAllCityData()
-        {
-            return this.decorationLocalData.IdToCityData;
-        }
+        public Dictionary<int, DecorationGroupLocalData> GetAllCityData() { return this.decorationLocalData.IdToCityData; }
 
-        public void SetCityComplete(int cityId)
-        {
-            this.decorationLocalData.IdToCityData[cityId].IsComplete = true;
-        }
+        public void SetCityComplete(int cityId) { this.decorationLocalData.IdToCityData[cityId].IsComplete = true; }
     }
 }

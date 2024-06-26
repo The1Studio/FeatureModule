@@ -13,7 +13,7 @@
     public class DecorationRecord
     {
         public int                                 CityId;
-        public string                              CityName;
+        public string                              Name;
         public string                              PrefabName;
         public Vector3                             Position;
         public Vector3                             Rotation;

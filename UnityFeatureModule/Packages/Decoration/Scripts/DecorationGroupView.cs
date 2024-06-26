@@ -15,7 +15,7 @@
     public class DecorationGroupModel
     {
         public int                      Id;
-        public string                   CityName;
+        public string                   Name;
         public string                   AddressableName;
         public Transform                Parent;
         public Vector3                  Position;
