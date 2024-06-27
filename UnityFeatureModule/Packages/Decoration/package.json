@@ -9,5 +9,8 @@
     "name": "The One Game Studio",
     "email": "tuha@the1studio.org",
     "url": "https://theonegamestudio.com/"
+  },
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "14.0.11"
   }
 }
